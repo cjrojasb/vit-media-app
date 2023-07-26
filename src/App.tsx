@@ -3,9 +3,11 @@ import UserList from "./components/UserList";
 
 function App() {
   return (
-    <Panel className="container">
-      <UserList />
-    </Panel>
+    <div className="container m-auto py-4">
+      <Panel className="">
+        <UserList />
+      </Panel>
+    </div>
   );
 }
 

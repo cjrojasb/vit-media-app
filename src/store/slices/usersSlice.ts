@@ -1,5 +1,5 @@
-import { SerializedError, createSlice } from "@reduxjs/toolkit";
-import { fetchUsers } from "../thunks/fetchUsers";
+import { PayloadAction, SerializedError, createSlice } from "@reduxjs/toolkit";
+import { fetchUsers, addUser } from "../thunks/usersRequests";
 
 export interface User {
   id: number;
@@ -27,11 +27,25 @@ const usersSlice = createSlice({
       .addCase(fetchUsers.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(fetchUsers.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.data = action.payload;
-      })
+      .addCase(
+        fetchUsers.fulfilled,
+        (state, { payload }: PayloadAction<User[]>) => {
+          state.isLoading = false;
+          state.data = payload;
+        }
+      )
       .addCase(fetchUsers.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error;
+      })
+      .addCase(addUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(addUser.fulfilled, (state, { payload }: PayloadAction<User>) => {
+        state.isLoading = false;
+        state.data.push(payload);
+      })
+      .addCase(addUser.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error;
       });
