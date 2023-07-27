@@ -3,6 +3,8 @@ import { useUsersThunk } from "../hooks/useUsersThunk";
 import { removeUser } from "../store";
 import { User } from "../store/slices/usersSlice";
 import { GoTrash } from "react-icons/go";
+import ExpandablePanel from "./shared/ExpandablePanel";
+import AlbumList from "./shared/AlbumsList";
 
 interface UsersListItemProps {
   user: User;
@@ -14,16 +16,20 @@ function UsersListItem({ user }: UsersListItemProps) {
 
   const handleRemove = () => doRemoveUser(id);
 
+  const header = (
+    <>
+      <Button variation="secondary" onClick={handleRemove} className="mr-3">
+        <GoTrash />
+      </Button>
+      {error && <div>Error deleting user.</div>}
+      {name}
+    </>
+  );
+
   return (
-    <div className="mb-2 border rounded">
-      <div className="flex p-2 justify-start items-center cursor-pointer gap-3">
-        <Button variation="secondary" onClick={handleRemove}>
-          <GoTrash />
-        </Button>
-        {error && <div>Error deleting user.</div>}
-        {name}
-      </div>
-    </div>
+    <ExpandablePanel header={header}>
+      <AlbumList user={user} />
+    </ExpandablePanel>
   );
 }
 

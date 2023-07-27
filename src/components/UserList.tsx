@@ -7,6 +7,7 @@ import { User } from "../store/slices/usersSlice";
 import { useUsersThunk } from "../hooks/useUsersThunk";
 import Skeleton from "./shared/Skeleton";
 import UsersListItem from "./UsersListItem";
+import ExpandablePanel from "./shared/ExpandablePanel";
 
 function UserList() {
   const [doFetchUsers, isLoadingUsers, loadingUsersError] =
