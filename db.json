@@ -1,60 +1,16 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Myra"
+      "name": "Dr. Benny Schaefer",
+      "id": 19
     },
     {
-      "name": "Della Waters",
-      "id": 2
+      "name": "Viola Zboncak",
+      "id": 20
     },
     {
-      "name": "Rex Stanton",
-      "id": 3
-    },
-    {
-      "name": "Isabel Bradtke",
-      "id": 4
-    },
-    {
-      "name": "Beatrice Ferry",
-      "id": 5
-    },
-    {
-      "name": "Joan Hyatt",
-      "id": 6
-    },
-    {
-      "name": "Robert Gottlieb",
-      "id": 7
-    },
-    {
-      "name": "Trevor Cormier",
-      "id": 8
-    },
-    {
-      "name": "Inez Spencer",
-      "id": 9
-    },
-    {
-      "name": "Marilyn Blick",
-      "id": 10
-    },
-    {
-      "name": "Lindsay Schmeler",
-      "id": 11
-    },
-    {
-      "name": "Mr. Nicolas Koss III",
-      "id": 12
-    },
-    {
-      "name": "Candace Towne",
-      "id": 13
-    },
-    {
-      "name": "Thomas Zulauf",
-      "id": 14
+      "name": "Jesus Murazik",
+      "id": 21
     }
   ],
   "albums": [],

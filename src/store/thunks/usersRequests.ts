@@ -18,4 +18,10 @@ const addUser = createAsyncThunk("users/add", async () => {
   return response.data;
 });
 
-export { fetchUsers, addUser };
+const removeUser = createAsyncThunk("users/remove", async (id: string) => {
+  await axios.delete(`${API_URL}/users/${id}`);
+
+  return id;
+});
+
+export { fetchUsers, addUser, removeUser };

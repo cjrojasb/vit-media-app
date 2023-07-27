@@ -1,43 +1,50 @@
-import { AppDispatch, fetchUsers, addUser } from "../store";
+import { fetchUsers, addUser } from "../store";
 import { Button } from "@cjrojasb/personal-ui-package";
-import { useDispatch, useSelector } from "react-redux";
+import { FaSpinner } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { User } from "../store/slices/usersSlice";
+import { useUsersThunk } from "../hooks/useUsersThunk";
 import Skeleton from "./shared/Skeleton";
+import UsersListItem from "./UsersListItem";
 
 function UserList() {
-  const { data, isLoading, error } = useSelector(({ users }) => users);
-  const dispatch = useDispatch<AppDispatch>();
+  const [doFetchUsers, isLoadingUsers, loadingUsersError] =
+    useUsersThunk(fetchUsers);
+  const [doAddUser, isCreatingUser] = useUsersThunk(addUser);
+  const { data } = useSelector(({ users }) => users);
 
   useEffect(() => {
-    dispatch(fetchUsers());
-  }, []);
+    doFetchUsers();
+  }, [doFetchUsers]);
 
-  const handleAddUser = () => dispatch(addUser());
+  const handleAddUser = () => doAddUser();
 
-  if (isLoading) {
-    return <Skeleton times={6} className="h-10 w-full" />;
-  }
+  let content: JSX.Element = <div></div>;
 
-  if (error) {
-    return <h1>Error fetching data...</h1>;
+  if (isLoadingUsers) {
+    content = <Skeleton times={6} className="h-10 w-full" />;
+  } else if (loadingUsersError) {
+    content = <h1>Error fetching data...</h1>;
+  } else {
+    content = data.map((user: User) => (
+      <UsersListItem key={user.id} user={user} />
+    ));
   }
 
   return (
     <div>
-      <div className="flex flex-row justify-between m-3">
+      <div className="flex flex-row justify-between m-3 items-center">
         <h1 className="m-2 text-xl">Users</h1>
-        <Button variation="info" onClick={handleAddUser} disabled={isLoading}>
-          + Add User
+        <Button
+          variation="info"
+          onClick={handleAddUser}
+          disabled={isCreatingUser}
+        >
+          {isCreatingUser ? <FaSpinner /> : "+ Add User"}
         </Button>
       </div>
-      {data.map(({ id, name }: User) => (
-        <div key={id} className="mb-2 border rounded">
-          <div className="flex p-2 justify-between items-center cursor-pointer">
-            {name}
-          </div>
-        </div>
-      ))}
+      {content}
     </div>
   );
 }
