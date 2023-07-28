@@ -13,6 +13,42 @@
       "id": 21
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "userId": "20",
+      "title": "Fantastic Soft Soap",
+      "id": 6
+    },
+    {
+      "userId": "19",
+      "title": "Gorgeous Concrete Shoes",
+      "id": 8
+    },
+    {
+      "userId": "19",
+      "title": "Licensed Bronze Gloves",
+      "id": 9
+    },
+    {
+      "userId": "19",
+      "title": "Licensed Frozen Pizza",
+      "id": 10
+    },
+    {
+      "userId": "21",
+      "title": "Bespoke Soft Car",
+      "id": 11
+    },
+    {
+      "userId": "20",
+      "title": "Handmade Soft Tuna",
+      "id": 12
+    },
+    {
+      "userId": "19",
+      "title": "Small Bronze Bike",
+      "id": 13
+    }
+  ],
   "photos": []
 }
