@@ -1,48 +1,23 @@
 import { Button } from "@cjrojasb/personal-ui-package";
 import { FaSpinner } from "react-icons/fa6";
-import {
-  useAddAlbumMutation,
-  useFetchAlbumsQuery,
-  useRemoveAlbumMutation,
-} from "../../store";
+import { useAddAlbumMutation, useFetchAlbumsQuery } from "../../store";
 import { User } from "../../store/slices/usersSlice";
-import ExpandablePanel from "./ExpandablePanel";
 import Skeleton from "./Skeleton";
-import { GoTrash } from "react-icons/go";
+import { Album } from "../../domain/Album";
+import AlbumListItem from "../AlbumListItem";
 
 interface AlbumListProps {
   user: User;
 }
 
 function AlbumList({ user }: AlbumListProps) {
-  const { data, error, isLoading } = useFetchAlbumsQuery(user.id.toString());
+  const { data, error, isLoading } = useFetchAlbumsQuery(user);
   const [addAlbum, { isLoading: isAddLoading }] = useAddAlbumMutation();
-  const [removeAlbum, { error: removeError, isLoading: isRemoveLoading }] =
-    useRemoveAlbumMutation();
   let content: JSX.Element = <></>;
 
-  const handleAddAlbum = (userId: string) => {
-    addAlbum(userId);
+  const handleAddAlbum = () => {
+    addAlbum(user);
   };
-
-  const handleRemove = (albumId: string) => {
-    removeAlbum(albumId);
-  };
-
-  const getHeader = (album: any) => (
-    <>
-      <Button
-        variation="warning"
-        onClick={() => handleRemove(album.id)}
-        className="mr-3"
-      >
-        <GoTrash />
-      </Button>
-      {removeError && <div>Error deleting album.</div>}
-      {album.title}
-    </>
-  );
-
   if (isLoading) {
     content = <Skeleton className="p-5" times={3} />;
   } else if (error) {
@@ -50,10 +25,8 @@ function AlbumList({ user }: AlbumListProps) {
   } else {
     content =
       data.length > 0 ? (
-        data.map((album) => (
-          <ExpandablePanel key={album.id} header={getHeader(album)}>
-            List of Photos in the album
-          </ExpandablePanel>
+        data.map((album: Album) => (
+          <AlbumListItem key={album.id} album={album} />
         ))
       ) : (
         <h1>No hay resultados</h1>
@@ -66,7 +39,7 @@ function AlbumList({ user }: AlbumListProps) {
         <h3 className="m-2 text-lg font-bold">Albums for {user.name}</h3>
         <Button
           variation="info"
-          onClick={() => handleAddAlbum(user.id.toString())}
+          onClick={handleAddAlbum}
           disabled={isAddLoading}
         >
           {isAddLoading ? <FaSpinner /> : "+ Add Album"}

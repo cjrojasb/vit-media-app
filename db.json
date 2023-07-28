@@ -2,52 +2,66 @@
   "users": [
     {
       "name": "Dr. Benny Schaefer",
-      "id": 19
+      "id": 1
     },
     {
       "name": "Viola Zboncak",
-      "id": 20
+      "id": 2
     },
     {
-      "name": "Jesus Murazik",
-      "id": 21
+      "name": "Ms. Shawna Metz",
+      "id": 3
+    },
+    {
+      "name": "Geraldine Reinger",
+      "id": 4
     }
   ],
   "albums": [
     {
-      "userId": "20",
-      "title": "Fantastic Soft Soap",
+      "userId": "1",
+      "title": "Awesome Plastic Sausages",
       "id": 6
     },
     {
-      "userId": "19",
-      "title": "Gorgeous Concrete Shoes",
+      "userId": "1",
+      "title": "Bespoke Metal Gloves",
+      "id": 7
+    },
+    {
+      "userId": "1",
+      "title": "Awesome Bronze Sausages",
       "id": 8
     },
     {
-      "userId": "19",
-      "title": "Licensed Bronze Gloves",
-      "id": 9
-    },
-    {
-      "userId": "19",
-      "title": "Licensed Frozen Pizza",
+      "userId": "2",
+      "title": "Ergonomic Cotton Ball",
       "id": 10
     },
     {
-      "userId": "21",
-      "title": "Bespoke Soft Car",
+      "userId": "2",
+      "title": "Sleek Rubber Tuna",
       "id": 11
     },
     {
-      "userId": "20",
-      "title": "Handmade Soft Tuna",
+      "userId": 2,
+      "title": "Incredible Plastic Tuna",
       "id": 12
     },
     {
-      "userId": "19",
-      "title": "Small Bronze Bike",
+      "userId": 2,
+      "title": "Oriental Frozen Cheese",
       "id": 13
+    },
+    {
+      "userId": 3,
+      "title": "Small Concrete Pizza",
+      "id": 14
+    },
+    {
+      "userId": 3,
+      "title": "Awesome Cotton Soap",
+      "id": 15
     }
   ],
   "photos": []
