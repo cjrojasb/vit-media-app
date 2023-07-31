@@ -11,14 +11,14 @@ interface AlbumListProps {
 }
 
 function AlbumList({ user }: AlbumListProps) {
-  const { data, error, isLoading } = useFetchAlbumsQuery(user);
+  const { data, error, isFetching } = useFetchAlbumsQuery(user);
   const [addAlbum, { isLoading: isAddLoading }] = useAddAlbumMutation();
   let content: JSX.Element = <></>;
 
   const handleAddAlbum = () => {
     addAlbum(user);
   };
-  if (isLoading) {
+  if (isFetching) {
     content = <Skeleton className="p-5" times={3} />;
   } else if (error) {
     content = <div>Error loading albums.</div>;

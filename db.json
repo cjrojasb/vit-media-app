@@ -15,24 +15,13 @@
     {
       "name": "Geraldine Reinger",
       "id": 4
+    },
+    {
+      "name": "Mrs. Maryann Robel",
+      "id": 5
     }
   ],
   "albums": [
-    {
-      "userId": "1",
-      "title": "Awesome Plastic Sausages",
-      "id": 6
-    },
-    {
-      "userId": "1",
-      "title": "Bespoke Metal Gloves",
-      "id": 7
-    },
-    {
-      "userId": "1",
-      "title": "Awesome Bronze Sausages",
-      "id": 8
-    },
     {
       "userId": "2",
       "title": "Ergonomic Cotton Ball",
@@ -62,6 +51,31 @@
       "userId": 3,
       "title": "Awesome Cotton Soap",
       "id": 15
+    },
+    {
+      "userId": 1,
+      "title": "Generic Wooden Car",
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "title": "Generic Concrete Soap",
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "title": "Electronic Soft Ball",
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "title": "Licensed Bronze Pants",
+      "id": 20
+    },
+    {
+      "userId": 4,
+      "title": "Electronic Soft Fish",
+      "id": 21
     }
   ],
   "photos": []
