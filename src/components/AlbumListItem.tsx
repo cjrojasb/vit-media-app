@@ -1,8 +1,9 @@
-import { Button } from "@cjrojasb/personal-ui-package";
-import { useRemoveAlbumMutation } from "../store";
-import { GoTrash } from "react-icons/go";
-import ExpandablePanel from "./shared/ExpandablePanel";
 import { AlbumListItemProps } from "../domain/Album";
+import { Button } from "@cjrojasb/personal-ui-package";
+import { GoTrash } from "react-icons/go";
+import { useRemoveAlbumMutation } from "../store";
+import ExpandablePanel from "./shared/ExpandablePanel";
+import PhotosList from "./PhotosList";
 
 function AlbumListItem({ album }: AlbumListItemProps) {
   const { title, id: albumId } = album;
@@ -30,7 +31,7 @@ function AlbumListItem({ album }: AlbumListItemProps) {
 
   return (
     <ExpandablePanel key={albumId} header={header}>
-      List of Photos in the album
+      <PhotosList album={album} />
     </ExpandablePanel>
   );
 }

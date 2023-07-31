@@ -1,10 +1,10 @@
 import { Button } from "@cjrojasb/personal-ui-package";
 import { FaSpinner } from "react-icons/fa6";
-import { useAddAlbumMutation, useFetchAlbumsQuery } from "../../store";
-import { User } from "../../store/slices/usersSlice";
-import Skeleton from "./Skeleton";
-import { Album } from "../../domain/Album";
-import AlbumListItem from "../AlbumListItem";
+import { useAddAlbumMutation, useFetchAlbumsQuery } from "../store";
+import { User } from "../store/slices/usersSlice";
+import Skeleton from "./shared/Skeleton";
+import { Album } from "../domain/Album";
+import AlbumListItem from "./AlbumListItem";
 
 interface AlbumListProps {
   user: User;

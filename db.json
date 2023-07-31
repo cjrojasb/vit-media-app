@@ -78,5 +78,41 @@
       "id": 21
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "id": 1,
+      "url": "https://picsum.photos/150/150",
+      "albumOd": 10
+    },
+    {
+      "albumId": 17,
+      "url": "https://loremflickr.com/150/150/abstract?lock=5523822711144448",
+      "id": 2
+    },
+    {
+      "albumId": 17,
+      "url": "https://loremflickr.com/150/150/abstract?lock=8482500579950592",
+      "id": 3
+    },
+    {
+      "albumId": 17,
+      "url": "https://loremflickr.com/150/150/abstract?lock=5547905159004160",
+      "id": 4
+    },
+    {
+      "albumId": 17,
+      "url": "https://loremflickr.com/150/150/abstract?lock=6170761876209664",
+      "id": 5
+    },
+    {
+      "albumId": 17,
+      "url": "https://loremflickr.com/150/150/abstract?lock=3230953610674176",
+      "id": 6
+    },
+    {
+      "albumId": 18,
+      "url": "https://loremflickr.com/150/150/abstract?lock=488405620228096",
+      "id": 8
+    }
+  ]
 }

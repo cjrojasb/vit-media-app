@@ -4,7 +4,7 @@ import { removeUser } from "../store";
 import { User } from "../store/slices/usersSlice";
 import { GoTrash } from "react-icons/go";
 import ExpandablePanel from "./shared/ExpandablePanel";
-import AlbumList from "./shared/AlbumsList";
+import AlbumList from "./AlbumsList";
 
 interface UsersListItemProps {
   user: User;

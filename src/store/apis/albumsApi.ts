@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Album } from "../../domain/Album";
 import { User } from "../slices/usersSlice";
 
-const API_URL = "http://localhost:3005";
+export const API_URL = "http://localhost:3005";
 
 const albumsApi = createApi({
   reducerPath: "albumsApi",
